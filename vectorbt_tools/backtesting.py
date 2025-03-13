@@ -97,9 +97,15 @@ def get_rebalancing_dates(dates: pd.DatetimeIndex, rebalancing_freq) -> pd.Datet
     return rebalancing_dates
 
 # %% main function
-def run(prices: pd.DataFrame, weights: dict, rebalancing_freq=1, threshold=None,        fees=None,
+def run(prices: pd.DataFrame, 
+        weights: dict, 
+        rebalancing_freq=1, 
+        threshold=None,        
+        fees=None,
         fixed_fees=None,
-        slippage=None,use_order_func=None, use_numba=True) -> vbt.Portfolio:
+        slippage=None,
+        use_order_func=None, 
+        use_numba=True) -> vbt.Portfolio:
     """
     Run a backtest using the provided prices, weights, and rebalancing frequency.
 
@@ -261,12 +267,16 @@ def run(prices: pd.DataFrame, weights: dict, rebalancing_freq=1, threshold=None,
     # Get rebalancing dates
     rebalancing_dates = get_rebalancing_dates(index, rebalancing_freq)
 
+    # Create prices DataFrame with same structure as weights_df
+    _prices = prices[weights_df.columns.get_level_values(1)]
+    _prices.columns = weights_df.columns
+
     # Set order func arguments
     size_type = np.asarray(SizeType.TargetPercent)
     direction = np.asarray(Direction.LongOnly)
-    fees = np.asarray(0.00)
-    fixed_fees = np.asarray(0.0)
-    slippage = np.asarray(0.00)
+    fees = np.asarray(fees)
+    fixed_fees = np.asarray(fixed_fees)
+    slippage = np.asarray(slippage)
 
     if use_order_func:
         # Create rebalancing mask
@@ -274,10 +284,6 @@ def run(prices: pd.DataFrame, weights: dict, rebalancing_freq=1, threshold=None,
         
         # Convert weights to numpy array for use in simulation
         size_arr = weights_df.values
-
-        # Create prices DataFrame with same structure as weights_df
-        _prices = prices[weights_df.columns.get_level_values(1)]
-        _prices.columns = weights_df.columns
 
         # Ensure threshold is a float for Numba compatibility
         threshold = float(threshold)
@@ -311,7 +317,7 @@ def run(prices: pd.DataFrame, weights: dict, rebalancing_freq=1, threshold=None,
 
         # Run simulation
         pf = vbt.Portfolio.from_orders(
-            close=prices,
+            close=_prices,
             size=size,
             size_type=size_type,
             direction=direction,

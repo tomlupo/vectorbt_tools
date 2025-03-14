@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # %% Run a standard backtest with no rebalancing
     start_time = time.time()  # Start timing
-    pf = run_backtest(prices, weights, rebalancing_freq=20)
+    pf = run_backtest(prices, weights, rebalancing_freq=20,fees=0.005)
     execution_times['no_rebalancing'] = time.time() - start_time  # Store execution time
     print("Standard backtest (no rebalancing):")
     print(f"Number of orders: {len(pf.orders)}")

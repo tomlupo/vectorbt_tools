@@ -101,9 +101,9 @@ def run(prices: pd.DataFrame,
         weights: dict, 
         rebalancing_freq=1, 
         threshold=None,        
-        fees=None,
-        fixed_fees=None,
-        slippage=None,
+        fees=0.0,
+        fixed_fees=0.0,
+        slippage=0.0,
         use_order_func=None, 
         use_numba=True) -> vbt.Portfolio:
     """
@@ -218,9 +218,9 @@ def run(prices: pd.DataFrame,
             price=get_elem_nb(c, c.close),
             size_type=np.int64(get_elem_nb(c, size_type)),
             direction=np.int64(get_elem_nb(c, direction)),
-            fees=get_elem_nb(c, fees),
-            fixed_fees=get_elem_nb(c, fixed_fees),
-            slippage=get_elem_nb(c, slippage),
+            fees=np.float64(get_elem_nb(c, fees)),
+            fixed_fees=np.float64(get_elem_nb(c, fixed_fees)),
+            slippage=np.float64(get_elem_nb(c, slippage)),
             log=True
         )
 

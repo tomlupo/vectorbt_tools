@@ -1,0 +1,179 @@
+# Copyright (c) 2021-2024 Oleg Polakow. All rights reserved.
+
+"""Optional dependencies."""
+
+from vectorbtpro.utils.config import HybridConfig
+
+__all__ = []
+
+__pdoc__ = {}
+
+opt_dep_config = HybridConfig(
+    dict(
+        yfinance=dict(
+            link="https://pypi.org/project/yfinance/",
+            version=">=0.2.20",
+        ),
+        binance=dict(
+            dist_name="python-binance",
+            link="https://pypi.org/project/python-binance/",
+            version=">=1.0.16",
+        ),
+        ccxt=dict(
+            link="https://pypi.org/project/ccxt/",
+            version=">=1.89.14",
+        ),
+        ta=dict(
+            link="https://pypi.org/project/ta/",
+        ),
+        pandas_ta=dict(
+            link="https://pypi.org/project/pandas-ta/",
+        ),
+        talib=dict(
+            dist_name="TA-Lib",
+            link="https://pypi.org/project/TA-Lib/",
+        ),
+        bottleneck=dict(
+            link="https://pypi.org/project/Bottleneck/",
+        ),
+        numexpr=dict(
+            link="https://pypi.org/project/numexpr/",
+        ),
+        ray=dict(
+            link="https://pypi.org/project/ray/",
+            version=">=1.4.1",
+        ),
+        dask=dict(
+            link="https://pypi.org/project/dask/",
+        ),
+        matplotlib=dict(
+            link="https://pypi.org/project/matplotlib/",
+            version=">=3.2.0",
+        ),
+        plotly=dict(
+            link="https://pypi.org/project/plotly/",
+            version=">=5.0.0",
+        ),
+        ipywidgets=dict(
+            link="https://pypi.org/project/ipywidgets/",
+            version=">=7.0.0",
+        ),
+        kaleido=dict(
+            link="https://pypi.org/project/kaleido/",
+        ),
+        telegram=dict(
+            dist_name="python-telegram-bot",
+            link="https://pypi.org/project/python-telegram-bot/",
+            version=">=13.4",
+        ),
+        quantstats=dict(
+            link="https://pypi.org/project/QuantStats/",
+            version=">=0.0.37",
+        ),
+        dill=dict(
+            link="https://pypi.org/project/dill/",
+        ),
+        alpaca=dict(
+            dist_name="alpaca-py",
+            link="https://pypi.org/project/alpaca-py/",
+        ),
+        polygon=dict(
+            dist_name="polygon-api-client",
+            link="https://pypi.org/project/polygon-api-client/",
+            version=">=1.0.0",
+        ),
+        bs4=dict(
+            dist_name="beautifulsoup4",
+            link="https://pypi.org/project/beautifulsoup4/",
+        ),
+        nasdaqdatalink=dict(
+            dist_name="Nasdaq-Data-Link",
+            link="https://pypi.org/project/Nasdaq-Data-Link/",
+        ),
+        pypfopt=dict(
+            dist_name="PyPortfolioOpt",
+            link="https://pypi.org/project/pyportfolioopt/",
+            version=">=1.5.1",
+        ),
+        universal=dict(
+            dist_name="universal-portfolios",
+            link="https://pypi.org/project/universal-portfolios/",
+        ),
+        plotly_resampler=dict(
+            dist_name="plotly-resampler",
+            link="https://pypi.org/project/plotly-resampler/",
+        ),
+        technical=dict(
+            link="https://pypi.org/project/technical/",
+        ),
+        riskfolio=dict(
+            dist_name="Riskfolio-Lib",
+            link="https://pypi.org/project/Riskfolio-Lib/",
+            version=">=3.3.0",
+        ),
+        pathos=dict(
+            link="https://pypi.org/project/pathos/",
+        ),
+        lz4=dict(
+            link="https://pypi.org/project/lz4/",
+        ),
+        blosc=dict(
+            link="https://pypi.org/project/blosc/",
+        ),
+        blosc2=dict(
+            link="https://pypi.org/project/blosc2/",
+        ),
+        tables=dict(
+            link="https://pypi.org/project/tables/",
+        ),
+        optuna=dict(
+            link="https://pypi.org/project/optuna/",
+        ),
+        sqlalchemy=dict(
+            dist_name="SQLAlchemy",
+            link="https://pypi.org/project/SQLAlchemy/",
+            version=">=2.0.0",
+        ),
+        mpire=dict(
+            link="https://pypi.org/project/mpire/",
+        ),
+        duckdb=dict(
+            link="https://pypi.org/project/duckdb/",
+        ),
+        duckdb_engine=dict(
+            dist_name="duckdb-engine",
+            link="https://pypi.org/project/duckdb-engine/",
+        ),
+        pyarrow=dict(
+            link="https://pypi.org/project/pyarrow/",
+        ),
+        fastparquet=dict(
+            link="https://pypi.org/project/fastparquet/",
+        ),
+        tabulate=dict(
+            link="https://pypi.org/project/tabulate/",
+        ),
+        alpha_vantage=dict(
+            link="https://pypi.org/project/alpha_vantage/",
+        ),
+        databento=dict(
+            link="https://pypi.org/project/databento/",
+        ),
+        smartmoneyconcepts=dict(
+            link="https://pypi.org/project/smartmoneyconcepts/",
+        ),
+        findatapy=dict(
+            link="https://pypi.org/project/findatapy/",
+        ),
+    )
+)
+"""_"""
+
+__pdoc__[
+    "opt_dep_config"
+] = f"""Config for optional packages.
+
+```python
+{opt_dep_config.prettify()}
+```
+"""

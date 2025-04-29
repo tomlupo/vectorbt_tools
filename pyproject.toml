@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vectorbt_tools"
+version = "25.0429"
+description = "Tools for vectorbt" 
+authors = [ { name="Tomasz Wilczega", email="twilczega@gmail.com" } ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# how to use it
+# pip install -e /full/path/to/package
